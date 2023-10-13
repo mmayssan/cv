@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your CV</title>
+    <title>Your CVs</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevent scrolling */
+            overflow-x: hidden;
+            overflow-y: scroll; /* Allows vertical scrolling */
         }
-        body {
+        .pdf-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
             display: flex;
-            justify-content: center;
             align-items: center;
-            background-color: #f8f8f8;
+            justify-content: center;
         }
         iframe {
-            width: 100vw; /* 100% of the viewport width */
-            height: 100vh; /* 100% of the viewport height */
+            width: 100%;
+            max-width: 600px; /* Adjust max-width as per your requirement */
+            height: 100%;
             border: none;
-            position: absolute;
-            top: 0; 
-            left: 0;
         }
     </style>
 </head>
 <body>
-    <iframe src="CV-EN-Manal.pdf#toolbar=0&view=Fit" title="Your CV"></iframe>
+    <div class="pdf-container">
+        <iframe src="CV-EN-Manal.pdf#toolbar=0&view=Fit" title="CV of Manal"></iframe>
+    </div>
+    <div class="pdf-container">
+        <iframe src="CV M.Mayssan.pdf#toolbar=0&view=Fit" title="CV of Another Person"></iframe>
+    </div>
 </body>
 </html>
